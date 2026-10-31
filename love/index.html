@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>Advance Happy Birthday ♡ A Little Surprise For You</title>
+  <meta name="description" content="A handcrafted luxury romantic digital surprise, wishing you an advance happy birthday with all my love.">
+  <meta name="theme-color" content="#1D1028">
+  
+  <!-- Open Graph / Social sharing -->
+  <meta property="og:title" content="Advance Happy Birthday ♡ A Little Surprise For You">
+  <meta property="og:description" content="A little early, but filled with so much love. Open your special birthday surprise.">
+  <meta property="og:type" content="website">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌹</text></svg>">
+  
+  <!-- Google Fonts: Cormorant Garamond, Playfair Display, Plus Jakarta Sans, Great Vibes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ambient Particle Canvas (Rose Petals & Golden Sparkles) -->
+  <canvas id="ambient-canvas" aria-hidden="true"></canvas>
+
+  <!-- Interactive Tap Hearts Container (Spawns cute hearts on touch/click) -->
+  <div id="tap-hearts-container" class="tap-hearts-container" aria-hidden="true"></div>
+
+  <!-- Floating Audio Player Control -->
+  <aside class="audio-control-wrapper" aria-label="Audio controls">
+    <button id="music-toggle-btn" class="music-toggle-btn" type="button" aria-label="Toggle background music" title="Play romantic music">
+      <span class="music-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 18V5l12-2v13"></path>
+          <circle cx="6" cy="18" r="3"></circle>
+          <circle cx="18" cy="16" r="3"></circle>
+        </svg>
+      </span>
+      <span class="music-waves" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </span>
+      <span class="music-label">Romantic Melody ♡</span>
+    </button>
+    <audio id="bg-audio" preload="auto" loop></audio>
+  </aside>
+
+  <!-- ========================================== -->
+  <!-- 1. OPENING SPLASH SCREEN                   -->
+  <!-- ========================================== -->
+  <section id="splash-screen" class="splash-screen" aria-label="Welcome screen">
+    <div class="splash-vignette"></div>
+    <div class="splash-card">
+      <div class="splash-icon-wrapper" aria-hidden="true">
+        <div class="glow-ring"></div>
+        <div class="splash-beating-heart">💖</div>
+      </div>
+
+      <p class="splash-subtitle">A Little Something, Just for You…</p>
+      <h1 class="splash-title">Someone wanted to make your day a little more special.</h1>
+
+      <div class="splash-decor" aria-hidden="true">
+        <span class="decor-line"></span>
+        <span class="decor-star">✦</span>
+        <span class="decor-line"></span>
+      </div>
+
+      <button id="open-surprise-btn" class="btn-luxury gold-shimmer" type="button">
+        <span class="btn-text">Open Your Surprise ♡</span>
+        <span class="btn-sparkle" aria-hidden="true">✨</span>
+      </button>
+
+      <p class="splash-hint">Tap anywhere with love 💕</p>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- MAIN SURPRISE CONTENT CONTAINER            -->
+  <!-- ========================================== -->
+  <main id="main-content" class="main-content" tabindex="-1">
+
+    <!-- Top Navigation / Brand Pill -->
+    <header class="luxury-header">
+      <div class="header-pill">
+        <span class="pill-sparkle">💖</span>
+        <span class="pill-text">A Little Gift Wrapped With Pure Love</span>
+        <span class="pill-sparkle">💖</span>
+      </div>
+    </header>
+
+    <!-- ========================================== -->
+    <!-- 2. HERO SECTION — ADVANCE BIRTHDAY WISH    -->
+    <!-- ========================================== -->
+    <section id="hero-section" class="section hero-section" aria-labelledby="hero-title">
+      <div class="container">
+        
+        <div class="hero-header-block">
+          <p class="hero-eyebrow">
+            <span class="gold-bullet">🌹</span>
+            ADVANCE BIRTHDAY CELEBRATION
+            <span class="gold-bullet">🌹</span>
+          </p>
+
+          <h2 id="hero-title" class="hero-title">
+            Your Special Day Is Almost Here…
+          </h2>
+
+          <p class="hero-description">
+            Some people make the world a little more beautiful just by being in it. 
+            This little surprise is for you.
+          </p>
+        </div>
+
+        <!-- Luxury Photo Frame with Beating Heart Accents -->
+        <div class="hero-portrait-card">
+          <div class="portrait-halo" aria-hidden="true"></div>
+          
+          <div class="portrait-frame">
+            <div class="frame-border-outer"></div>
+            <div class="frame-border-inner"></div>
+            
+            <!-- Cute Floating Heart Badge -->
+            <div class="heart-float-badge" aria-hidden="true">
+              <span class="badge-heart-icon">💖</span>
+            </div>
+
+            <div class="image-wrapper">
+              <img id="hero-img" 
+                   src="assets/images/hero.jpg" 
+                   alt="Her portrait celebrating her upcoming birthday" 
+                   loading="eager"
+                   class="portrait-photo">
+              <div class="image-soft-gradient" aria-hidden="true"></div>
+            </div>
+
+            <!-- Corner filigree accents -->
+            <span class="corner corner-tl" aria-hidden="true">⌜</span>
+            <span class="corner corner-tr" aria-hidden="true">⌝</span>
+            <span class="corner corner-bl" aria-hidden="true">⌞</span>
+            <span class="corner corner-br" aria-hidden="true">⌟</span>
+          </div>
+
+          <!-- Hero Name Banner with Cute Typewriter Subtitle -->
+          <div class="hero-name-banner">
+            <h3 class="hero-name-display" id="hero-her-name">
+              ADVANCE HAPPY BIRTHDAY, MY DEAREST ♡
+            </h3>
+            
+            <!-- Interactive Typewriter Line -->
+            <div class="typewriter-wrapper">
+              <span class="typewriter-heart">💌</span>
+              <span id="typewriter-text" class="typewriter-text"></span>
+              <span class="typewriter-cursor">|</span>
+            </div>
+
+            <p class="hero-caption" id="hero-caption-text">
+              “A little early, but filled with so much love.”
+            </p>
+
+            <!-- Interactive Send Love Button -->
+            <div class="send-love-wrapper">
+              <button id="send-love-btn" class="send-love-pill" type="button" aria-label="Send a love heart">
+                <span class="btn-heart-pulse" aria-hidden="true">💖</span>
+                <span class="send-love-text">Tap to Send Her Love</span>
+                <span id="love-count-badge" class="love-count-badge">100+</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 3. LIVE BIRTHDAY COUNTDOWN                 -->
+    <!-- ========================================== -->
+    <section id="countdown-section" class="section countdown-section" aria-labelledby="countdown-title">
+      <div class="container">
+        <div class="section-badge">
+          <span class="badge-icon">⏳</span>
+          <span class="badge-text">TIME WAITS FOR NO ONE, BUT LOVE WAITS FOR YOU</span>
+        </div>
+
+        <h2 id="countdown-title" class="section-title">
+          Counting Down to Your Beautiful Day ♡
+        </h2>
+        
+        <p class="section-subtitle">
+          Every second brings us closer to celebrating the most wonderful day of the year.
+        </p>
+
+        <!-- Countdown Card Grid -->
+        <div class="countdown-grid" id="countdown-grid" role="timer" aria-live="polite">
+          
+          <div class="time-card">
+            <div class="time-card-inner">
+              <span class="time-value" id="days-val">00</span>
+              <span class="time-label">DAYS</span>
+            </div>
+            <div class="card-glow" aria-hidden="true"></div>
+          </div>
+
+          <div class="time-separator" aria-hidden="true">:</div>
+
+          <div class="time-card">
+            <div class="time-card-inner">
+              <span class="time-value" id="hours-val">00</span>
+              <span class="time-label">HOURS</span>
+            </div>
+            <div class="card-glow" aria-hidden="true"></div>
+          </div>
+
+          <div class="time-separator" aria-hidden="true">:</div>
+
+          <div class="time-card">
+            <div class="time-card-inner">
+              <span class="time-value" id="minutes-val">00</span>
+              <span class="time-label">MINUTES</span>
+            </div>
+            <div class="card-glow" aria-hidden="true"></div>
+          </div>
+
+          <div class="time-separator" aria-hidden="true">:</div>
+
+          <div class="time-card">
+            <div class="time-card-inner">
+              <span class="time-value" id="seconds-val">00</span>
+              <span class="time-label">SECONDS</span>
+            </div>
+            <div class="card-glow" aria-hidden="true"></div>
+          </div>
+
+        </div>
+
+        <!-- Target Date Display -->
+        <div class="countdown-footer-info">
+          <p class="target-date-display">
+            Target Celebration: <span class="gold-highlight" id="target-date-text">November 15</span>
+          </p>
+          <p id="countdown-status-msg" class="countdown-live-quote">
+            “The world became sweeter the day you were born.”
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 4. REASONS WHY YOU ARE SO SPECIAL (NEW)    -->
+    <!-- ========================================== -->
+    <section id="reasons-section" class="section reasons-section" aria-labelledby="reasons-title">
+      <div class="container">
+        
+        <div class="section-badge">
+          <span class="badge-icon">✨</span>
+          <span class="badge-text">SWEET LITTLE SECRETS</span>
+        </div>
+
+        <h2 id="reasons-title" class="section-title">
+          Reasons Why You Mean The World ♡
+        </h2>
+
+        <p class="section-subtitle">
+          Tap on each little card to reveal a sweet thought written just for you.
+        </p>
+
+        <div class="reasons-grid">
+          
+          <div class="reason-card" tabindex="0" role="button">
+            <div class="reason-icon-bubble">🌸</div>
+            <h3 class="reason-headline">Your Pure Smile</h3>
+            <p class="reason-desc">One glimpse of your sweet smile has the magical power to wash away any stressful day and make everything feel peaceful.</p>
+            <span class="reason-heart-tag">Tap to feel the love 💕</span>
+          </div>
+
+          <div class="reason-card" tabindex="0" role="button">
+            <div class="reason-icon-bubble">🐾</div>
+            <h3 class="reason-headline">Your Gentle Heart</h3>
+            <p class="reason-desc">The innocent, tender way you care for puppies and little children shows just how pure and beautiful your soul is.</p>
+            <span class="reason-heart-tag">Tap to feel the love 💕</span>
+          </div>
+
+          <div class="reason-card" tabindex="0" role="button">
+            <div class="reason-icon-bubble">🎂</div>
+            <h3 class="reason-headline">Your Joyful Light</h3>
+            <p class="reason-desc">You don't even have to try; your natural energy effortlessly lights up the room and makes everyone around you happy.</p>
+            <span class="reason-heart-tag">Tap to feel the love 💕</span>
+          </div>
+
+          <div class="reason-card" tabindex="0" role="button">
+            <div class="reason-icon-bubble">👑</div>
+            <h3 class="reason-headline">Your Natural Grace</h3>
+            <p class="reason-desc">Whether in a traditional saree or everyday clothes, there is an effortless elegance and quiet dignity in who you are.</p>
+            <span class="reason-heart-tag">Tap to feel the love 💕</span>
+          </div>
+
+          <div class="reason-card" tabindex="0" role="button">
+            <div class="reason-icon-bubble">🌙</div>
+            <h3 class="reason-headline">My Comfort Place</h3>
+            <p class="reason-desc">In a world full of noise, just thinking of you brings an instant feeling of calm, warmth, and belonging.</p>
+            <span class="reason-heart-tag">Tap to feel the love 💕</span>
+          </div>
+
+          <div class="reason-card" tabindex="0" role="button">
+            <div class="reason-icon-bubble">💖</div>
+            <h3 class="reason-headline">Simply Because It's You</h3>
+            <p class="reason-desc">No grand reasons needed. You are uniquely, irreplaceable, wonderfully you — and that is why you are so cherished.</p>
+            <span class="reason-heart-tag">Tap to feel the love 💕</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 5. PHOTO GALLERY — MEMORY SCRAPBOOK        -->
+    <!-- ========================================== -->
+    <section id="gallery-section" class="section gallery-section" aria-labelledby="gallery-title">
+      <div class="container">
+        
+        <div class="section-badge">
+          <span class="badge-icon">📸</span>
+          <span class="badge-text">HANDCRAFTED POLAROID SCRAPBOOK</span>
+        </div>
+
+        <h2 id="gallery-title" class="section-title">
+          A Little Collection of Beautiful Things
+        </h2>
+
+        <p class="section-subtitle">
+          Every glance, every smile, and every captured breath worth cherishing forever.
+        </p>
+
+        <!-- Polaroid Scrapbook Grid -->
+        <div class="gallery-grid scrapbook-grid" id="gallery-grid">
+          <!-- Rendered dynamically by script.js with washi tape & stickers -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 6. PERSONAL LOVE LETTER (INTERACTIVE)      -->
+    <!-- ========================================== -->
+    <section id="letter-section" class="section letter-section" aria-labelledby="letter-title">
+      <div class="container">
+        
+        <div class="section-badge">
+          <span class="badge-icon">💌</span>
+          <span class="badge-text">FROM THE DEPTHS OF MY HEART</span>
+        </div>
+
+        <h2 id="letter-title" class="section-title">
+          A Little Note for You
+        </h2>
+
+        <p class="section-subtitle">
+          Tap on the vintage wax-sealed envelope to unfold what's written just for you.
+        </p>
+
+        <!-- Interactive Envelope Component -->
+        <div class="envelope-wrapper">
+          <div id="envelope" class="envelope" role="button" tabindex="0" aria-label="Open letter envelope" aria-expanded="false">
+            
+            <!-- Envelope Flap -->
+            <div class="envelope-flap">
+              <div class="flap-triangle"></div>
+            </div>
+
+            <!-- Envelope Pocket Front -->
+            <div class="envelope-pocket"></div>
+
+            <!-- Wax Seal Button -->
+            <div class="wax-seal" id="wax-seal" aria-hidden="true">
+              <div class="wax-seal-inner">
+                <span>♡</span>
+              </div>
+            </div>
+
+            <!-- Letter Paper (Slides up and unfolds) -->
+            <div class="letter-paper" id="letter-paper">
+              <div class="letter-inner">
+                <div class="letter-watermark" aria-hidden="true">❦</div>
+                
+                <p class="letter-greeting" id="letter-greeting-text">Hey, you ♡</p>
+                
+                <div class="letter-body" id="letter-body-paragraphs">
+                  <p>I know your birthday is still a little away, but I didn't want to wait until the actual day to remind you how special you are.</p>
+                  <p>I hope the coming year brings you beautiful memories, peaceful days, endless reasons to smile, and all the little things your heart wishes for.</p>
+                  <p>You deserve happiness not just on your birthday, but on all the ordinary days in between, too.</p>
+                  <p>So here's a little advance wish, wrapped in a tiny website and sent with lots of warmth.</p>
+                </div>
+
+                <p class="letter-sign" id="letter-sign-text">
+                  Advance Happy Birthday! ♡
+                </p>
+
+                <div class="letter-seal-decor" aria-hidden="true">
+                  <span>✦ ✦ ✦</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <p class="envelope-hint" id="envelope-hint-text">
+            <span>👆</span> Tap the envelope to open or fold back
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 7. THE INFINITE LOVE METER (NEW INTERACTIVE)-->
+    <!-- ========================================== -->
+    <section id="love-meter-section" class="section love-meter-section" aria-labelledby="meter-title">
+      <div class="container">
+        
+        <div class="section-badge">
+          <span class="badge-icon">💖</span>
+          <span class="badge-text">LOVE INTENSITY TEST</span>
+        </div>
+
+        <h2 id="meter-title" class="section-title">
+          How Much Do I Love You? ♡
+        </h2>
+
+        <p class="section-subtitle">
+          Tap the beating heart to charge up the Love Meter and see the result!
+        </p>
+
+        <div class="love-meter-box">
+          <div class="meter-heart-wrapper">
+            <button id="charge-meter-btn" class="meter-heart-btn" type="button" aria-label="Charge Love Meter">
+              <span class="meter-big-heart">💖</span>
+              <span class="meter-pulse-ripple" aria-hidden="true"></span>
+            </button>
+          </div>
+
+          <div class="meter-progress-track">
+            <div id="meter-progress-fill" class="meter-progress-fill" style="width: 20%;"></div>
+          </div>
+
+          <div class="meter-info">
+            <span class="meter-pct" id="meter-pct-text">20% Love</span>
+            <span class="meter-status" id="meter-status-text">Tap the heart to give more love! 💕</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 8. ONE LAST LITTLE SURPRISE                -->
+    <!-- ========================================== -->
+    <section id="surprise-section" class="section surprise-section" aria-labelledby="surprise-title">
+      <div class="container">
+        
+        <div class="section-badge">
+          <span class="badge-icon">🎁</span>
+          <span class="badge-text">FINAL SPECIAL MOMENT</span>
+        </div>
+
+        <h2 id="surprise-title" class="section-title">
+          One Last Little Surprise…
+        </h2>
+
+        <p class="section-subtitle">
+          Close your eyes, make a gentle wish, and press the golden button.
+        </p>
+
+        <div class="surprise-box-container">
+          
+          <!-- Trigger Button -->
+          <div id="surprise-trigger-wrapper" class="surprise-trigger-wrapper">
+            <button id="reveal-surprise-btn" class="btn-luxury gold-shimmer btn-large" type="button">
+              <span class="btn-glow-pulse" aria-hidden="true"></span>
+              <span class="btn-text">Tap to Reveal ♡</span>
+              <span class="btn-sparkle" aria-hidden="true">✨</span>
+            </button>
+          </div>
+
+          <!-- Revealed Surprise Card -->
+          <div id="surprise-revealed-card" class="surprise-revealed-card hidden" aria-live="polite">
+            <div class="revealed-glow" aria-hidden="true"></div>
+            
+            <div class="revealed-header">
+              <span class="gold-ribbon">A WISH WRITTEN WITH ALL MY HEART</span>
+            </div>
+
+            <h3 class="revealed-headline" id="surprise-headline-text">
+              “You deserve a year full of beautiful beginnings.”
+            </h3>
+
+            <p class="revealed-body" id="surprise-body-text">
+              May every sunrise give you fresh hopes, every sunset leave you with peace, and every moment in between remind you how deeply treasured and loved you truly are. Always keep smiling that smile that lights up entire rooms. ♡
+            </p>
+
+            <div class="revealed-actions">
+              <button id="replay-surprise-btn" class="btn-subtle" type="button">
+                <span>Experience Again ↺</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 9. FINAL BIRTHDAY CARD & FOOTER            -->
+    <!-- ========================================== -->
+    <footer class="section final-card-section" aria-labelledby="final-title">
+      <div class="container">
+        
+        <div class="final-luxury-card">
+          <div class="final-card-border" aria-hidden="true"></div>
+          
+          <div class="final-card-content">
+            <span class="card-pretitle">Until Your Special Day…</span>
+            
+            <h2 id="final-title" class="final-main-title">
+              ADVANCE HAPPY BIRTHDAY ♡
+            </h2>
+
+            <div class="final-quote-block">
+              <p class="final-quote">
+                “May your next chapter be even more beautiful than the last.”
+              </p>
+            </div>
+
+            <div class="final-rose-decoration" aria-hidden="true">
+              <span class="rose-icon">🌹</span>
+              <span class="gold-stars">✦ 💖 ✦</span>
+              <span class="rose-icon">🌹</span>
+            </div>
+
+            <p class="card-closing-name" id="final-closing-name">
+              Counting down every single heartbeat for you.
+            </p>
+          </div>
+        </div>
+
+        <div class="site-footer">
+          <p class="footer-copy">
+            Made with all the love in the universe, just for you. ♡
+          </p>
+          <button id="back-to-top-btn" class="back-to-top" type="button" aria-label="Scroll back to top">
+            <span>↑ Back to Top</span>
+          </button>
+        </div>
+
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Photo Lightbox Modal -->
+  <dialog id="photo-modal" class="photo-modal" aria-label="Photo preview">
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+    <div class="modal-dialog-content">
+      <button id="modal-close-btn" class="modal-close-btn" type="button" aria-label="Close preview">✕</button>
+      <div class="modal-image-container">
+        <img id="modal-img" src="" alt="Enlarged photo preview" class="modal-photo">
+      </div>
+      <p id="modal-caption" class="modal-caption-text"></p>
+    </div>
+  </dialog>
+
+  <!-- Fireworks / Heart Burst Canvas for Surprise -->
+  <canvas id="burst-canvas" class="burst-canvas" aria-hidden="true"></canvas>
+
+  <!-- Main JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>
